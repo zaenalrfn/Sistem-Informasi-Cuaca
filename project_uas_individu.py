@@ -120,6 +120,7 @@ def cari_data_cuaca():
 def edit_data_cuaca():
     konek = koneksi_db()
     cursor = konek.cursor()
+    edit_data_waktu = datetime.now()
     form = popup_input(
         [
             put_input(
@@ -134,6 +135,7 @@ def edit_data_cuaca():
     kondisi__data_cuaca = kondisi_cuaca(form["suhu_edit"])
     value_edit = (
         form["lokasi_edit"],
+        edit_data_waktu,
         form["suhu_edit"],
         kondisi__data_cuaca,
         form["id_cuaca"],
@@ -143,7 +145,7 @@ def edit_data_cuaca():
     )
     if confirm_edit == True:
         cursor.execute(
-            "UPDATE cuaca SET lokasi=%s, suhu=%s, kondisi=%s WHERE id_cuaca=%s",
+            "UPDATE cuaca SET lokasi=%s, waktu=%s, suhu=%s, kondisi=%s WHERE id_cuaca=%s",
             value_edit,
         )
         konek.commit()
