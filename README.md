@@ -1,7 +1,5 @@
-# Tugas UAS INDIVIDU Algoritma dan Pemrograman Dasar
-
 # SISTEM INFORMASI CUACA
-
+Tugas UAS individu Algoritma dan Pemrograman Dasar
 TOOLS:
 1.PYTHON
 2.PYWEBIO GUI
